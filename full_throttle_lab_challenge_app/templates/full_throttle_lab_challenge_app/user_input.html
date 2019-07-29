@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FULL THROTTLE LAB WORD SEARCH</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body>
+        {% block content %}
+        <p>Enter Word : </p>
+        <input type="text" onkeyup="wordSearchFunction(this)">
+        <p id="result"></p>
+
+        <script>
+            function wordSearchFunction(me) {
+                var settings = {
+                "async": true,
+                "url": "http://localhost:8000/home/search?word="+me.value,
+                "method": "GET",
+                "headers": {
+                "cache-control": "no-cache",
+                "Postman-Token": "eaec125a-46c2-47e0-afb6-63cb255d347f"
+                }
+                }
+
+                $.ajax(settings).done(function (response) {
+                    document.getElementById("result").innerHTML = 'Top 25 Matches (ranked by specified constraints):  <br><br>' + response.result;
+                });
+            }
+        </script>
+        {% endblock content %}
+            
+    </body>
+</html>
+            
+

@@ -1,7 +1,7 @@
 # Deployment
 
 
-## Download ,then change directories to project directory
+## Clone the repository and then change directories to project directory
 
 $ cd &lt;project directory&gt;
 
@@ -11,9 +11,9 @@ $ sudo pip3 install -r requirements.txt
 
 ## Run the commands
 
-$ python3 manage.py makemigrations
-$ python3 manage.py migrate
-$ python3 manage.py runserver
+$ python3 manage.py makemigrations <br/>
+$ python3 manage.py migrate <br/>
+$ python3 manage.py runserver <br/>
 
 ### Goto your browser type url http://localhost:8000/home/
 
